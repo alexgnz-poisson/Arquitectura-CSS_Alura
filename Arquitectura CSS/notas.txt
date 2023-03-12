@@ -1,0 +1,122 @@
+Conceptos Bàsicos
+Que es una arquitectura CSS
+-Es una metodolaogia que se enfoca en la estructura de un proyecto
+
+Objetivos de una arquitectura CSS
+-Es la organizacion del codigo y carpetas junto a una metodologia de clases para que el trabajo en equipo esté 
+estandarizado 
+
+Una arquitectura CSS debe ser:
+Predecible : Sus reglas hacen lo que se espera. Añadir o actualizar una regla no tiene repercusiones inesperadas
+
+Reutilizable: Las reglas son abstractas y estan desacoplada. Asi se podran crear nuevos componentes de forma mas rapida
+y sencilla
+
+Mantenible: Es la capacidad de realizar cambios en las CSS sin necesidad de tener que refactorizar el codigo existente
+
+Escalable: Significa que a medida que las CSS aumentan de tamaño, siguen siendo faciles de mantener. 
+
+Tipos de metodologias
+-OOCSS
+-SMACSS
+-BEM
+-ITCSS
+-ACSS(Atomic Design)
+
+La pagina web siempre debe empezar de arriba hasta abajo 
+
+METODOLOGIA BEM
+BEM(Bloque, Elemento, Modificador)
+Es una convencion de nomenclatura popular apra clases en html y CSS
+La idea detras de esto es dividir la interfaz de usuario en bloques independientes
+Esto hace que el desarrollo de la interfaz sea facil y rapido, incluso con una interfaz de usuario compleja, permite crear 
+componentes de interfaz extensibles y reutilizables. 
+
+BLOQUE 
+Un componente de pagina funcionalmente independiente que se puede reutilizar. En HTML , los bloques estan representados
+por el class atributo. Este bloque debe considerarse como un padre 
+<div class="card">
+
+</div>
+
+ELEMENTO 
+Una parate compuesta de un bloque que no se puede usar por separado. 
+
+<form class="contacto>
+    <input class="contacto_input">
+    <button class="contacto_button">Enviar</button>
+</form>
+
+MODIFICADOR 
+Una entidad que define la apariencia , el estado o el comportamiento de un bloque o elemento .
+
+<div class = "card">
+    <a class = "card_link" href="">Nombre</a>
+    <a class = "card_link-resaltar" href="">Precio</a>
+</div>
+
+ATOMIC DESIGN 
+El atomic design o diseño atómico es una metodoligía para crear sistemas de diseño
+Hay cinco niveles disitintos en el diseño atómico 
+
+-Atomos
+-Moleculas
+-Organismos
+-Template
+-Paginas 
+
+
+ATOMOS: Son los componentes basicos de la materia. En las interfaces son nuestras etiquetas de HTML
+
+MOLECULAS : Son grupos de atomos unidos entre si, son las unidades fundamentales mas pequeñas de un compuesto 
+
+ORGANISMOS: Son grupos de moleculas unidas para formar una seccion distinta y relativamente compleja de una interfaz 
+
+TEMPLATE : Consisten principalmente en grupos de organismos unidos para formar paginas 
+
+PAGINAS : Son instancias especificas de plantillas. Es donde probamos la efectividad del sistema de diseño 
+
+El objetivo del ATOM DESIGN es practicamente separar en pequeños archivos las secciones del proyecto de ir pasandolos a 
+archivos especificos 
+
+Las propiedades abreviadas o “shorthand” son propiedades CSS que permiten establecer los valores de varias otras 
+propiedades CSS simultáneamente. Usando una propiedad abreviada, puede escribir hojas de estilo más concisas, ahorrando 
+tiempo y energía.
+
+Una buena practica es que dentro del documento html no esten las imgenes , sino dentro debtro del css 
+EJEMPLO-
+.banner__iamgen{
+    background: url(`/assets/img/banner.png`) no-repat center / cover;
+    width: 100%;
+    heigth:calc(100vh - 72px);
+}
+
+A veces podemos tener dudas sobre qué debe estar en CSS y qué debe estar en HTML. Quizás la duda más común es acerca de las imágenes: 
+¿debemos referenciarlas en CSS o directamente en HTML?
+
+Podemos importar las imágenes en CSS, asignar el estilo a una clase y a través de la clase mostrar las imágenes.Como estamos ante imágenes 
+ilustrativas, sabemos que los estilos deben estar en nuestro CSS.
+
+A menudo, nos enfocamos en crear un sitio web para personas que usan computadoras y terminamos olvidándonos de aquellos 
+que usan teléfonos celulares o tabletas. Como resultado, nuestros sitios web pueden romperse o quedar inutilizables en 
+dispositivos pequeños.
+
+¿Cómo podemos solucionar este problema?
+
+Hacer que el sitio web sea responsive para que se adapte a diferentes tamaños de pantalla.
+
+
+Así tendremos un único proyecto, de fácil mantenimiento, evolución y actualización.
+
+
+Probablemente, en aplicaciones medianas/grandes habrá varios componentes y estilos. Teniendo en cuenta los ajustes que 
+se realizan con el tiempo, la tendencia es que los archivos de estilo (CSS) sean cada vez más grandes.
+
+Pensando en un componente de tablero con encabezado, título, descripción y botón, ¿cómo podemos organizar estos archivos?
+panel/encabezado.css
+panel/título.css
+panel/descripción.css
+panel/boton.css
+
+Para una mejor organización y mantenimiento de los proyectos CSS, estudiamos que podemos utilizar la metodología 
+Atomic Design, que consiste en crear un archivo .css para cada elemento de nuestros componentes.
